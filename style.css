@@ -1,0 +1,68 @@
+body {
+  background-color: cadetblue;
+  font-family: Helvetica;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.sizing {
+  max-width: 80vw;
+  max-height: 60vh;
+}
+img {
+  border-radius: 2rem;
+}
+button {
+  margin: 2rem;
+  width: 12rem;
+  height: 5rem;
+  font-size: large;
+  border-radius: 2rem;
+  border: 1px solid black;
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: #d0021a;
+  }
+  10% {
+    background-color: #ff7f00;
+  }
+  20% {
+    background-color: #ffff00;
+  }
+  30% {
+    background-color: #7fff00;
+  }
+  40% {
+    background-color: #00ff00;
+  }
+  50% {
+    background-color: #00ff7f;
+  }
+  60% {
+    background-color: #00ffff;
+  }
+  70% {
+    background-color: #007fff;
+  }
+  80% {
+    background-color: #0000ff;
+  }
+  90% {
+    background-color: #7f00ff;
+  }
+  100% {
+    background-color: #ff00ff;
+  }
+}
+button:hover {
+  animation: 2s rainbow infinite;
+  cursor: pointer;
+}
