@@ -8,12 +8,24 @@
   </head>
   <body>
     <main>
-      <button id="get-cat">Get a cat & a fact</button>
+      <div class="user-input">
+        <button id="get-btn"></button>
+        <div class="radio">
+          <input type="radio" name="factChoice" value="cat" id="cat" checked />
+          <label for="cat">Cats</label>
+          <input type="radio" name="factChoice" value="other" id="other" />
+          <label for="other">Other</label>
+        </div>
+      </div>
       <div id="img-wrapper">
-        <img class="sizing" id="cat-img" />
+        <img class="sizing" id="img" />
       </div>
       <div id="fact-wrapper">
-        <p id="cat-fact"></p>
+        <p id="fact"></p>
+        <p id="author"></p>
+      </div>
+      <div>
+        <p class="useless-fact"></p>
       </div>
       <script src="script.js"></script>
     </main>
