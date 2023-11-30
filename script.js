@@ -1,10 +1,11 @@
-//const corporateUrl = "https://corporatebs-generator.sameerkumar.website/";
+const corporateUrl = "https://corporatebs-generator.sameerkumar.website/";
 const catPicUrl = "https://api.thecatapi.com/v1/images/search";
 const inspirationUrl = "https://api.quotable.io/random";
 const catFactUrl = "https://meowfacts.herokuapp.com/";
 const randPicUrl = "https://picsum.photos/600/400";
 const imgWrapper = document.getElementById("img-wrapper");
 const factWrapper = document.getElementById("fact-wrapper");
+const text = document.querySelector("#fact");
 //Old code:
 // const catImg = async () => {
 //   response = await fetch(catPicUrl);
@@ -32,20 +33,22 @@ const catImg = async () => {
 const catFact = async () => {
   response = await fetch(catFactUrl);
   data = await response.json();
-  const fact = document.querySelector("#fact");
-  fact.classList.add("sizing");
-  fact.textContent = data.data;
+  text.textContent = data.data;
 };
 const randQuote = async () => {
   response = await fetch(inspirationUrl);
   data = await response.json();
-  const quote = document.querySelector("#fact");
-  quote.classList.add("sizing");
-  quote.textContent = data.content;
+  text.textContent = data.content;
   const author = document.querySelector("#author");
   author.classList.add("author-styling");
   author.textContent = "- " + data.author;
 };
+const randBull = async () => {
+  response = await fetch(corporateUrl);
+  data = await response.json();
+  text.textContent = data.phrase;
+};
+
 const randImg = () => {
   document.getElementById("img").setAttribute("src", randPicUrl);
 };
@@ -57,13 +60,44 @@ function getCat() {
 }
 function getOther() {
   randQuote();
-  randImg();
+  catImg();
 }
-const cat = document.getElementById("cat");
-const other = document.getElementById("other");
+function getPhrase() {
+  catImg();
+  randBull();
+  author.textContent = "";
+}
 const getBtn = document.getElementById("get-btn");
+const exclam = [
+  "Wow!",
+  "Interesting!",
+  "Amazing!",
+  "Huh?",
+  "Hmm..",
+  "Good to know",
+  "Cool!",
+  "Radical!",
+  "Tubular!",
+  "Brilliant!",
+  "Dang!",
+  "Fabulous!",
+  "Fantastic!",
+  "Holy Mackerel!",
+  "Marvelous!",
+  "No Way!",
+  "Swell!",
+];
 getBtn.addEventListener("click", () => {
-  getOther();
+  if (cat.checked) {
+    getCat();
+    getBtn.innerText = exclam[Math.floor(Math.random() * exclam.length)];
+  }
+  if (other.checked) {
+    getOther();
+    getBtn.innerText = exclam[Math.floor(Math.random() * exclam.length)];
+  }
+  if (bull.checked) {
+    getPhrase();
+    getBtn.innerText = exclam[Math.floor(Math.random() * exclam.length)];
+  }
 });
-
-onload;

@@ -9,23 +9,37 @@
   <body>
     <main>
       <div class="user-input">
-        <button id="get-btn"></button>
+        <button id="get-btn">Get a cat and a:</button>
         <div class="radio">
-          <input type="radio" name="factChoice" value="cat" id="cat" checked />
-          <label for="cat">Cats</label>
-          <input type="radio" name="factChoice" value="other" id="other" />
-          <label for="other">Other</label>
+          <div class="label-wrapper">
+            <input
+              type="radio"
+              name="factChoice"
+              value="cat"
+              id="cat"
+              checked
+            />
+            <label for="cat">Cat Fact</label>
+          </div>
+          <div class="label-wrapper">
+            <input type="radio" name="factChoice" value="other" id="other" />
+            <label for="other">Famous Quote</label>
+          </div>
+          <div class="label-wrapper">
+            <input type="radio" name="factChoice" value="bull" id="bull" />
+            <label for="bull">Lingo Phrase</label>
+          </div>
         </div>
       </div>
       <div id="img-wrapper">
         <img class="sizing" id="img" />
       </div>
-      <div id="fact-wrapper">
+      <div class="textbox sizing" id="fact-wrapper">
         <p id="fact"></p>
-        <p id="author"></p>
+        <p class="author" id="author"></p>
       </div>
-      <div>
-        <p class="useless-fact"></p>
+      <div class="spiral-wrapper">
+        <img class="spiral" src="./spiral.svg" alt="" />
       </div>
       <script src="script.js"></script>
     </main>
