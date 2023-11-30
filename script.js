@@ -4,27 +4,8 @@ const inspirationUrl = "https://api.quotable.io/random";
 const catFactUrl = "https://meowfacts.herokuapp.com/";
 const randPicUrl = "https://picsum.photos/600/400";
 const imgWrapper = document.getElementById("img-wrapper");
-const factWrapper = document.getElementById("fact-wrapper");
 const text = document.querySelector("#fact");
-//Old code:
-// const catImg = async () => {
-//   response = await fetch(catPicUrl);
-//   imgSrc = await response.json();
-//   console.log(imgSrc);
-//   const img = document.createElement("img");
-//   img.src = imgSrc[0]["url"];
-//   img.classList.add("sizing");
-//   imgWrapper.appendChild(img);
-// };
-// const catFact = async () => {
-//   response = await fetch(catFactUrl);
-//   data = await response.json();
-//   console.log(data);
-//   const fact = document.createElement("p");
-//   fact.innerText = data.data;
-//   fact.classList.add("sizing");
-//   factWrapper.appendChild(fact);
-// };
+
 const catImg = async () => {
   response = await fetch(catPicUrl);
   imgSrc = await response.json();
@@ -47,10 +28,6 @@ const randBull = async () => {
   response = await fetch(corporateUrl);
   data = await response.json();
   text.textContent = data.phrase;
-};
-
-const randImg = () => {
-  document.getElementById("img").setAttribute("src", randPicUrl);
 };
 
 function getCat() {
@@ -87,6 +64,7 @@ const exclam = [
   "No Way!",
   "Swell!",
 ];
+
 getBtn.addEventListener("click", () => {
   if (cat.checked) {
     getCat();

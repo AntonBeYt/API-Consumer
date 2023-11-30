@@ -10,9 +10,6 @@ body {
   animation: 2s background infinite alternate;
   position: relative;
 }
-p {
-  font-family: var(--paragraph-font);
-}
 main {
   display: flex;
   flex-direction: column;
@@ -21,17 +18,9 @@ main {
   height: 100%;
   position: relative;
 }
-.spiral-wrapper {
-  position: absolute;
-  z-index: -1;
-  height: 100vh;
-  width: 100vw;
-  top: 50%;
-  display: flex;
-  justify-content: center;
-  animation: 8s rotate linear infinite;
+p {
+  font-family: var(--paragraph-font);
 }
-
 .sizing {
   max-width: 80vw;
   max-height: 60vh;
@@ -44,12 +33,6 @@ img {
   flex-direction: row;
   align-items: center;
 }
-.radio {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--paragraph-font);
-}
-
 button {
   font-family: var(--headline-font);
   margin: 2rem;
@@ -58,6 +41,15 @@ button {
   font-size: large;
   border-radius: 2rem;
   border: 1px solid black;
+  &:hover {
+    animation: 3s rainbow linear infinite;
+    cursor: pointer;
+  }
+}
+.radio {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--paragraph-font);
 }
 .textbox {
   color: var(--text-color);
@@ -66,7 +58,16 @@ button {
 .author {
   font-style: italic;
 }
-
+.spiral-wrapper {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  animation: 8s rotate linear infinite;
+}
 @keyframes rainbow {
   100%,
   0% {
@@ -148,10 +149,6 @@ button {
   100% {
     transform: rotate(360deg);
   }
-}
-button:hover {
-  animation: 3s rainbow linear infinite;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 800px) {
