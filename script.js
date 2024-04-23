@@ -7,26 +7,26 @@ const imgWrapper = document.getElementById("img-wrapper");
 const text = document.querySelector("#fact");
 
 const catImg = async () => {
-  response = await fetch(catPicUrl);
-  imgSrc = await response.json();
+  const response = await fetch(catPicUrl);
+  const imgSrc = await response.json();
   document.getElementById("img").setAttribute("src", imgSrc[0]["url"]);
 };
 const catFact = async () => {
-  response = await fetch(catFactUrl);
-  data = await response.json();
+  const response = await fetch(catFactUrl);
+  const data = await response.json();
   text.textContent = data.data;
 };
 const randQuote = async () => {
-  response = await fetch(inspirationUrl);
-  data = await response.json();
+  const response = await fetch(inspirationUrl);
+  const data = await response.json();
   text.textContent = data.content;
   const author = document.querySelector("#author");
   author.classList.add("author-styling");
   author.textContent = "- " + data.author;
 };
 const randBull = async () => {
-  response = await fetch(corporateUrl);
-  data = await response.json();
+  const response = await fetch(corporateUrl);
+  const data = await response.json();
   text.textContent = data.phrase;
 };
 
